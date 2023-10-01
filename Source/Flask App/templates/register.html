@@ -1,0 +1,223 @@
+<html>
+  <head>
+    <title>Emo Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+     	<!-- Favicon -->
+    <link rel="icon" type="image/ico" href="static/favicon.ico" >   
+    
+    <script> 
+          
+            // Function to check Whether both passwords 
+            // is same or not. 
+            function checkPassword(form) { 
+                pswd = form.pswd.value; 
+                cpswd = form.cpswd.value; 
+  
+                // If password not entered 
+                if (pswd == '') 
+                    alert ("Please enter Password"); 
+                      
+                // If confirm password not entered 
+                else if (cpswd == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                // If Not same return False.     
+                else if (pswd != cpswd) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
+                // If same return True. 
+                else{ 
+                    alert("Password Match: Welcome to GeeksforGeeks!") 
+                    return true; 
+                } 
+            } 
+        </script> 
+    
+  </head>
+  
+  
+  
+  
+  <body>
+  	 <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
+   <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                        <!-- Nav brand -->
+                         <a href="{{ url_for('layout') }}" class="nav-brand"><img src="static/Logo1.png" alt=""></a>
+
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="{{ url_for('layout') }}">Home</a></li>
+                                                                                                           
+                                </ul>
+
+                                <!-- Login/Register & Cart Button -->
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login/Register -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="{{ url_for('login') }}" id="loginBtn">Login / Register</a>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    
+        
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(static/bg-img/breadcumb3.jpg);">
+        <div class="bradcumbContent">
+            <p>Let's Begin</p>
+            <h2>Register</h2>
+        </div>
+    </section>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Login Area Start ##### -->
+    <section class="login-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="login-content">
+                        <h3>Let's Begin</h3>
+                        <!-- Login Form -->
+                        <div class="login-form">
+                            <form action="#" method="post">
+                            
+                            	<div class="form-group">
+                                    <label for="exampleInputEmail1">Name</label>
+                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                                  
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail">
+                                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputpswd">Password</label>
+                                    <input type="password" name="pswd" class="form-control" id="exampleInputpswd" placeholder="Password">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputpswd">Confirm Password</label>
+                                    <input type="password" name="cpswd" class="form-control" id="exampleInputpswd" placeholder="Confirm Password">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Emotion - Happy</label>
+                                    <select class="form-control" name="Happy" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre for Happy Emotion">
+                                  		<option value="Country">COUNTRY</option>
+                                  		<option value="R&B">R&B</option>                                  		
+                                  		<option value="Rock">ROCK</option>                                  		
+                                  		<option value="Rap">RAP</option>
+                                  	</select>	
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Emotion - Sad</label>
+                                    <select class="form-control" name="Sad" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre for Sad Emotion">
+                                  		<option value="Country">COUNTRY</option>
+                                  		<option value="R&B">R&B</option>                                  		
+                                  		<option value="Rock">ROCK</option>                                  		
+                                  		<option value="Rap">RAP</option>
+                                  	</select>	
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Emotion - Angry</label>
+                                    <select class="form-control" name="Angry" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre for Angry Emotion">
+                                        <option value="Country">COUNTRY</option>
+                                  		<option value="R&B">R&B</option>                                  		
+                                  		<option value="Rock">ROCK</option>                                  		
+                                  		<option value="Rap">RAP</option>                                  	</select>	
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Emotion - Neutral</label>
+                                    <select class="form-control" name="Neutral" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre for Neutral Emotion">
+                                  		<option value="Country">COUNTRY</option>
+                                  		<option value="R&B">R&B</option>                                  		
+                                  		<option value="Rock">ROCK</option>                                  		
+                                  		<option value="Rap">RAP</option>
+                                  	</select>	
+                                </div>
+                            
+                               	
+                               	<a href = "{{url_for('login')}}"><button name="2" type="submit" class="btn oneMusic-btn mt-30">Done</button></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Login Area End ##### -->
+
+
+  	
+    
+   
+  
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="static/js/active.js"></script>
+    
+    
+  </body>
+</html>
+
+
+
+
+

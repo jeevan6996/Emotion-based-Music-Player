@@ -1,0 +1,143 @@
+<html>
+
+
+  <head>
+    <title>Emo Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+     	<!-- Favicon -->
+    <link rel="icon" type="image/ico" href="static/favicon.ico" >   
+  </head>
+  
+  
+  
+  
+  <body>
+  	 <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                        <!-- Nav brand -->
+                         <a href="{{ url_for('layout') }}" class="nav-brand"><img src="static/Logo1.png" alt=""></a>
+
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                   <!-- <li><a href="{{ url_for('layout') }}">Home</a></li> -->
+                                                                       	                                
+                                </ul>
+
+                                <!-- Login/Register & Cart Button -->
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login/Register -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="userpage.html" id="loginBtn">Welcome {{loggedUser}} </a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                        <a href="{{url_for('layout')}}" id="loginBtn">Logout </a>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    
+    
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(static/bg-img/breadcumb3.jpg);">
+        <div class="bradcumbContent">
+            <h2>Camera Capture</h2><br>
+            <p>Click on camera button to start !</p>
+        </div>
+    </section>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Login Area Start ##### -->
+    <section class="login-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="login-content">
+                       <!-- <h3>Welcome Back</h3> -->
+                        <!-- Login Form -->
+                        <div class="login-form">
+                                                        
+                            <br><br>                            
+                            <form action="#" method="post">
+                                <input type="image" src="static/Camera2.png" height="250" width="300" alt="" style="border-radius:50px">
+                            </form>
+                            <br>
+                            {% if emotionUser %}
+                            <h2>Your Emotion is {{emotionUser}} !</h2>
+                            {% endif %}
+                            <br>
+                            <a href= "{{url_for('MusicPlayer')}}" ><button name="music" style = "background-color:  #88c9ea  ; height:50; width:200;border-radius: 30px;margin-top:5px" ><h4>PLAY MUSIC</h4> </button></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Login Area End ##### -->
+
+
+  	
+    
+   
+  
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="static/js/active.js"></script>
+    
+    
+  </body>
+</html>
+
+
+
+
+
+

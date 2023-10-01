@@ -1,0 +1,301 @@
+
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#bg{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+#bg img{
+    height: 120vh;
+    width: 105%;
+    -webkit-filter:blur(20px);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+#blackLayer{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,.2);
+    position: absolute;
+    z-index: 99;
+}
+#main{
+    width: 25%;
+    height: 50%;
+    background-color:#fff;
+    border-radius: 15px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+}
+#image img{
+    height: 250px;
+    width: 100%;
+    margin-top: -5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+#player{
+    padding: 25px;
+    color:#333;
+}
+#songTitle{
+    width:300px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    position: absolute;
+    top:65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#buttons{
+    height: 100px;
+    width: 100%;
+    margin-top: 50px;
+    position:relative;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#play,#next,#pre{
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background-color:royalblue;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top:115%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#next{
+    width: 30px;
+    height: 30px;
+    left: 70%;
+}
+#pre{
+    width: 30px;
+    height: 30px;
+    left: 30%;
+}
+#play img,#next img,#pre img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#seek-bar{
+    /*width:250px;*/
+    height: 8px;
+    background-color:gray;
+    display: flex;
+    border-radius: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+#fill{
+    height: 8px;
+    background-color:royalblue;
+    border-radius: 20px;
+}
+#handle{
+    width: 8px;
+    height: 8px;
+    background-color:royalblue;
+    border-radius: 50%;
+    margin-left: -5px;
+    transform: scale(2);
+}
+
+/* :: 4.0 Header Area CSS */
+.header-area {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  top: 20px;
+  left: 0;
+  z-index: 1000; }
+  .header-area .oneMusic-main-menu {
+    position: relative;
+    width: 100%;
+    height: 85px;
+    background-color: transparent; }
+    @media only screen and (max-width: 767px) {
+      .header-area .oneMusic-main-menu {
+        height: 70px; } }
+    .header-area .oneMusic-main-menu .classy-nav-container {
+      background-color: transparent; }
+    .header-area .oneMusic-main-menu .classy-navbar {
+      background-color: transparent;
+      height: 85px;
+      padding: 0; }
+      @media only screen and (max-width: 767px) {
+        .header-area .oneMusic-main-menu .classy-navbar {
+          height: 70px; } }
+      .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a {
+        font-weight: 700;
+        text-transform: capitalize;
+        color: #ffffff;
+        font-size: 16px; }
+        .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a:hover, .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a:focus {
+          color: rgba(255, 255, 255, 0.7); }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a {
+            background-color: #000000;
+            border-bottom-color: rgba(255, 255, 255, 0.1); } }
+        @media only screen and (max-width: 767px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li a {
+            background-color: #000000;
+            border-bottom-color: rgba(255, 255, 255, 0.1); } }
+      .header-area .oneMusic-main-menu .classy-navbar .classynav ul li.megamenu-item > a::after,
+      .header-area .oneMusic-main-menu .classy-navbar .classynav ul li.has-down > a::after {
+        color: #ffffff; }
+      .header-area .oneMusic-main-menu .classy-navbar .classynav ul li.megamenu-item ul li > a::after,
+      .header-area .oneMusic-main-menu .classy-navbar .classynav ul li.has-down ul li > a::after {
+        color: #232323; }
+        @media only screen and (max-width: 767px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li.megamenu-item ul li > a::after,
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li.has-down ul li > a::after {
+            color: #ffffff; } }
+      .header-area .oneMusic-main-menu .classy-navbar .classynav ul li ul li a {
+        color: #232323; }
+        .header-area .oneMusic-main-menu .classy-navbar .classynav ul li ul li a:hover, .header-area .oneMusic-main-menu .classy-navbar .classynav ul li ul li a:focus {
+          color: #888888; }
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li ul li a {
+            padding: 0 15px; } }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li ul li a {
+            color: #ffffff;
+            padding: 0 30px;
+            border-bottom-color: rgba(255, 255, 255, 0.1); } }
+        @media only screen and (max-width: 767px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li ul li a {
+            color: #ffffff;
+            padding: 0 30px;
+            border-bottom-color: rgba(255, 255, 255, 0.1) !important; } }
+      .header-area .oneMusic-main-menu .classy-navbar .classynav ul li .dropdown li .dropdown li .dropdown li a {
+        border-bottom: 1px solid rgba(242, 244, 248, 0.7); }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li .dropdown li .dropdown li .dropdown li a {
+            border-bottom-color: rgba(255, 255, 255, 0.1) !important; } }
+        @media only screen and (max-width: 767px) {
+          .header-area .oneMusic-main-menu .classy-navbar .classynav ul li .dropdown li .dropdown li .dropdown li a {
+            border-bottom-color: rgba(255, 255, 255, 0.1) !important; } }
+    .header-area .oneMusic-main-menu .login-register-cart-button {
+      position: relative;
+      z-index: 1;
+      margin-left: 100px; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .header-area .oneMusic-main-menu .login-register-cart-button {
+          margin-left: 12px;
+          margin-top: 15px; } }
+      @media only screen and (max-width: 767px) {
+        .header-area .oneMusic-main-menu .login-register-cart-button {
+          margin-left: 12px;
+          margin-top: 15px; } }
+      .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn {
+        position: relative;
+        z-index: 10; }
+        .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a {
+          -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+          margin-bottom: 0;
+          color: #fff;
+          font-weight: 700;
+          font-size: 16px;
+          cursor: pointer;
+          line-height: 1; }
+          .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:hover, .header-area .oneMusic-main-menu .login-register-cart-button .login-register-btn a:focus {
+            color: rgba(255, 255, 255, 0.7); }
+      .header-area .oneMusic-main-menu .login-register-cart-button .cart-btn {
+        position: relative;
+        z-index: 10; }
+        .header-area .oneMusic-main-menu .login-register-cart-button .cart-btn p {
+          -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+          margin-bottom: 0;
+          color: #fff;
+          font-size: 18px;
+          cursor: pointer;
+          line-height: 1; }
+          .header-area .oneMusic-main-menu .login-register-cart-button .cart-btn p:hover, .header-area .oneMusic-main-menu .login-register-cart-button .cart-btn p:focus {
+            color: rgba(255, 255, 255, 0.7); }
+          .header-area .oneMusic-main-menu .login-register-cart-button .cart-btn p .quantity {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #fff;
+            background-color: #232323;
+            color: #fff;
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: -10px;
+            z-index: 10;
+            font-size: 9px;
+            font-weight: 400;
+            border-radius: 50%;
+            line-height: 13px;
+            text-align: center; }
+  .header-area .is-sticky .oneMusic-main-menu {
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: #000000;
+    box-shadow: 0 5px 50px 15px rgba(0, 0, 0, 0.2); }
+    @media only screen and (max-width: 767px) {
+      .header-area .is-sticky .oneMusic-main-menu {
+        height: 70px; } }
+
+.classy-navbar .nav-brand {
+  max-width: 130px; }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .breakpoint-on .classy-navbar .classy-menu {
+    background-color: #000000; } }
+@media only screen and (max-width: 767px) {
+  .breakpoint-on .classy-navbar .classy-menu {
+    background-color: #000000; } }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .classynav ul li .megamenu .single-mega.cn-col-4 {
+    padding: 0; } }
+@media only screen and (max-width: 767px) {
+  .classynav ul li .megamenu .single-mega.cn-col-4 {
+    padding: 0; } }
+
+.classycloseIcon .cross-wrap span {
+  background: #ffffff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

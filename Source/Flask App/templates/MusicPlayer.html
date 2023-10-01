@@ -1,0 +1,181 @@
+<html>
+    <head>
+        <link href="static/MusicPlayer.css" rel="stylesheet"/>
+        <link href="static/main.css" rel="stylesheet"/>
+        <script src="static/js/jquery-1.10.2.min.js"></script>
+    </head>
+    <body>
+        <div id="bg">
+        
+              <div id="blackLayer"></div>
+            <img src="static/mu-img/Poster4.jpg"/>
+        </div>
+       
+         <!-- Nav Start -->
+                            
+                            <!-- Nav End -->
+
+           <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                        <!-- Nav brand -->
+                         <a href="{{ url_for('layout') }}" class="nav-brand"><img src="static/Logo1.png" alt=""></a>
+
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                   <!-- <li><a href="{{ url_for('layout') }}">Home</a></li> -->
+                                                                       	                                
+                                </ul>
+
+                                <!-- Login/Register & Cart Button -->
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login/Register -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="userpage.html" id="loginBtn">Welcome {{loggedUser}} </a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                        <a href="{{url_for('layout')}}" id="loginBtn">Logout </a>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+       
+        <div id="main">
+            <div id="image">
+                <img src="static/mu-img/Poster4.jpg"/>
+            </div>
+            <div id="player">
+                <div id="songTitle">Demo</div>
+                <div id="buttons">
+                    <button id="pre" onclick="pre()"><img src="static/mu-img/Pre.png" height="90%" width="90%"/></button>
+                    <button id="play" onclick="playOrPauseSong()"><img src="static/mu-img/Pause.png"/></button>
+                    <button id="next" onclick="next()"><img src="static/mu-img/Next.png" height="90%" width="90%"/></button>
+                </div>
+                
+                <div id="seek-bar">
+                    <div id="fill"></div>
+                    <div id="handle"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var songs = {{playList|safe}};
+        var poster = ["static/mu-img/Poster4.jpg","static/mu-img/Poster4.jpg","static/mu-img/Poster3.jpg"];
+        
+        var songTitle = document.getElementById("songTitle");
+        var fillBar = document.getElementById("fill");
+        
+        var song = new Audio();
+        var currentSong = 0;    // it point to the current song
+        
+        window.onload = playSong;   // it will call the function playSong when window is load
+        
+        function playSong(){
+            
+            song.src = songs[currentSong];  //set the source of 0th song 
+            var str = songs[currentSong];
+            var pos = str.lastIndexOf("/");
+            var songTtle = str.slice(pos+1)
+
+            songTitle.textContent = songTtle; // set the title of song
+            
+            song.play();    // play the song
+        }
+        
+        function playOrPauseSong(){
+            
+            if(song.paused){
+                song.play();
+                $("#play img").attr("src","static/mu-img/Pause.png");
+            }
+            else{
+                song.pause();
+                $("#play img").attr("src","static/mu-img/Play.png");
+            }
+        }
+        
+        song.addEventListener('timeupdate',function(){ 
+            
+            var position = song.currentTime / song.duration;
+            
+            fillBar.style.width = position * 100 +'%';
+        });
+        
+    
+        function next(){
+            
+            currentSong++;
+            if(currentSong > 30){
+                currentSong = 0;
+            }
+            playSong();
+            $("#play img").attr("src","static/mu-img/Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+    
+        function pre(){
+            
+            currentSong--;
+            if(currentSong < 0){
+                currentSong = 2;
+            }
+            playSong();
+            $("#play img").attr("src","static/mu-img/Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+        
+    
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</html>

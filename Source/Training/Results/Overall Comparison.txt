@@ -1,0 +1,35 @@
+VGG16 CNN BottleNeck
+
+Architecture specs : 
+    Total params: 14,714,688
+    Trainable params: 14,714,688
+    Non-trainable params: 0
+
+Training time : 16 mins approx
+
+Overall Accuracy : 64%
+
+Angry       0.62
+Happy       0.78
+Neutral     0.65
+Sad         0.53
+
+
+---------------------------------------
+
+MiniException CNN
+
+Architecture specs : 
+    Total params: 54,964
+    Trainable params: 53,492
+    Non-trainable params: 1,472
+
+Training time : 4 hrs approx 
+
+Overall Accuracy : 87%
+
+Angry       0.82
+Happy       1.00
+Neutral     0.89
+Sad         0.78
+
