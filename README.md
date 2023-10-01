@@ -1,5 +1,5 @@
 # Emotion-based-Music-Player
-A flask python application integrating deep learning model for detecting emotions from Web Camera and playing music of the desired genre
+A flask application in Python with deep learning based models to detect human emotions from webcam feed and playing music of the desired genre.
 
 ## Copyright Disclaimer
 
